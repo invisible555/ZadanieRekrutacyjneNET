@@ -1,21 +1,54 @@
-Zadanie 6
-1.Zamiast pobierać całe encje z bazy, można pobrać tylko potrzebne kolumny za pomocą Select().
-Dzięki temu aplikacja przetwarza mniej danych i zapytanie SQL jest prostsze i szybsze.
-2.Zamiast pobierać wszystkie dane i filtrować je w C#, warto filtrować już na poziomie SQL.
-EF Core wygeneruje zoptymalizowane zapytanie i pobierze tylko te rekordy, które spełniają warunek.
-3.Jeśli potrzebne są dane powiązane, np. urlopy i pakiety urlopowe, można pobrać wszystko jednym zapytaniem.
-Dzięki temu unika się problemu N+1 zapytań i poprawia wydajność przy pracy z relacjami.
+🧩 Zadanie rekrutacyjne – ASP.NET Core MVC (.NET 9)
+📘 Opis projektu
 
+Zadania zostały wykonane w architekturze ASP.NET Core MVC (.NET 9) z wykorzystaniem Entity Framework Core (InMemory).
+Projekt został podzielony na warstwy, aby zachować przejrzystość, testowalność i łatwość utrzymania.
 
-Zadania zostały wykonane w architekturze ASP.NET Core MVC (.NET 9) z wykorzystaniem Entity Framework Core.
-Zastosowałem podejście warstwowe, dzieląc logikę na czytelne i łatwe w utrzymaniu moduły:
+🔹 Architektura
 
 Models – definicje encji (Employee, Team, Vacation, VacationPackage) oraz relacji między nimi zgodnie ze schematem z zadania.
 
 Repository – odpowiedzialne za logikę zapytań i komunikację z kontekstem danych (AppDbContext).
 
-Services – zawiera logikę biznesową, m.in. obliczanie wykorzystanych dni urlopu (CountFreeDaysForEmployee) oraz weryfikację możliwości złożenia wniosku urlopowego (IfEmployeeCanRequestVacation).
+Services – zawiera logikę biznesową, m.in.:
+
+CountFreeDaysForEmployee() – obliczanie liczby pozostałych dni urlopu,
+
+IfEmployeeCanRequestVacation() – sprawdzanie, czy pracownik może złożyć nowy wniosek urlopowy.
 
 Controllers – warstwa prezentacji, w której dane z serwisu są udostępniane do widoku.
 
-Middleware – globalna obsługa błędów i wyjątków w aplikacji (ErrorHandlingMiddleware), zwracająca spójne komunikaty HTTP.
+Middleware – globalna obsługa błędów (ErrorHandlingMiddleware), która przechwytuje wyjątki i zwraca spójne komunikaty JSON.
+
+⚙️ Zadanie 6 – Optymalizacja zapytań
+
+Użycie Select() – zamiast pobierać całe encje, aplikacja pobiera tylko potrzebne kolumny.
+Dzięki temu zapytanie SQL jest prostsze i przetwarza mniej danych.
+
+Filtrowanie po stronie SQL (Where()) – warunki są stosowane jeszcze przed ToList(),
+dzięki czemu EF Core generuje zoptymalizowane zapytanie SQL.
+
+Użycie Include() dla powiązań – pozwala uniknąć problemu N+1 query,
+pobierając dane relacyjne (np. urlopy i pakiety urlopowe) w jednym zapytaniu.
+
+🧪 Testy jednostkowe
+
+Projekt zawiera testy NUnit, które weryfikują metodę:
+-IfEmployeeCanRequestVacation
+
+
+🚀 Jak uruchomić projekt lokalnie
+1️⃣ Sklonuj repozytorium
+git clone https://github.com/invisible555/ZadanieRekrutacyjneNET.git
+cd ZadanieRekrutacyjneNET
+2️⃣ Przywróć zależności
+dotnet restore
+3️⃣ Zbuduj rozwiązanie
+dotnet build
+4️⃣ Uruchom aplikację
+dotnet run --project Rekrutacja
+
+🧱 Dodatkowe informacje
+W SeedData znajdują się przykładowi pracownicy (m.in. Anna, która wykorzystała pełny limit urlopowy).
+
+Globalna obsługa błędów zapewnia spójne komunikaty HTTP w przypadku wyjątków
