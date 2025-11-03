@@ -1,8 +1,8 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Rekrutacja.Models;
+using VacationManagementSystem.Models;
 
-namespace Rekrutacja.Controllers
+namespace VacationManagementSystem.Controllers
 {
     public class HomeController : Controller
     {

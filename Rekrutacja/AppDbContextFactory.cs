@@ -2,13 +2,13 @@
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace Rekrutacja
+namespace VacationManagementSystem
 {
     public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {
         public AppDbContext CreateDbContext(string[] args)
         {
-            // ✅ Ścieżka do Twojego folderu projektu
+           
             var projectPath = Path.Combine(
                 Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
                 "Rekrutacja"

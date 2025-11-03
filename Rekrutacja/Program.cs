@@ -1,10 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using Rekrutacja.Data;
-using Rekrutacja.Middleware;
-using Rekrutacja.Repository;
-using Rekrutacja.Services;
+using VacationManagementSystem.Data;
+using VacationManagementSystem.Middleware;
+using VacationManagementSystem.Repository;
+using VacationManagementSystem.Services;
 
-namespace Rekrutacja
+namespace VacationManagementSystem
 {
     public class Program
     {

@@ -1,19 +1,22 @@
 ﻿using Microsoft.AspNetCore.DataProtection.Repositories;
-using Rekrutacja.DTO;
-using Rekrutacja.Models;
-using Rekrutacja.Repository;
+using VacationManagementSystem.DTO;
+using VacationManagementSystem.Models;
+using VacationManagementSystem.Repository;
 
-namespace Rekrutacja.Services
+namespace VacationManagementSystem.Services
 {
-    public class RekrutacjaService
+    public class RecrutationService
     {
 
-        private readonly RekrutacjaRepository _repository;
-        public RekrutacjaService(RekrutacjaRepository repository)
+        private readonly RecrutationRepository _repository;
+        public RecrutationService(RecrutationRepository repository)
         {
             _repository = repository;
 
         }
+
+       
+
         //Zadanie 3
         public int CountFreeDaysForEmployee(Employee employee, List<Vacation> vacations,
     VacationPackage vacationPackage)

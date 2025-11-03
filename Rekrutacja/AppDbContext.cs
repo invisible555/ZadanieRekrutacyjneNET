@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Rekrutacja.Models;
+using VacationManagementSystem.Models;
 
-namespace Rekrutacja
+namespace VacationManagementSystem
 {
     public class AppDbContext : DbContext
     {
@@ -17,7 +17,7 @@ namespace Rekrutacja
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // 🔹 Team (1) -> (*) Employee
+            //  Team (1) -> (*) Employee
             modelBuilder.Entity<Employee>()
                 .HasOne(e => e.Team)
                 .WithMany(t => t.Employees)

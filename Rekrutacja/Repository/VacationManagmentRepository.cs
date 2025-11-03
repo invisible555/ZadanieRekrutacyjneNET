@@ -1,10 +1,10 @@
-﻿using Rekrutacja.Models;
+﻿using VacationManagementSystem.Models;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Net;
 using Microsoft.EntityFrameworkCore;
-using Rekrutacja.DTO;
+using VacationManagementSystem.DTO;
 
-namespace Rekrutacja.Repository
+namespace VacationManagementSystem.Repository
 {
     public class RekrutacjaRepository
     {

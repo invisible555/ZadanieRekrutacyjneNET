@@ -1,6 +1,6 @@
-﻿using Rekrutacja.Services;
+﻿using VacationManagementSystem.Services;
 
-namespace Rekrutacja.DTO
+namespace VacationManagementSystem.DTO
 {
     public class EmployeeDetailsViewModel
     {

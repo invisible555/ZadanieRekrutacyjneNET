@@ -1,6 +1,6 @@
-﻿using Rekrutacja.Models;
+﻿using VacationManagementSystem.Models;
 
-namespace Rekrutacja.DTO
+namespace VacationManagementSystem.DTO
 {
     public class EmployeeVacationDaysDTO
     {

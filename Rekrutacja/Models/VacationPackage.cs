@@ -1,4 +1,4 @@
-﻿namespace Rekrutacja.Models
+﻿namespace VacationManagementSystem.Models
 {
     public class VacationPackage
     {
@@ -7,7 +7,7 @@
         public int GrantedDays { get; set; }
         public int Year { get; set; }
 
-        // 🔹 Relacja 1 -> *
+        //  Relacja 1 -> *
         public ICollection<Employee> Employees { get; set; } = new List<Employee>();
     }
 }

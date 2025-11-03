@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Rekrutacja.Services;
+using VacationManagementSystem.Services;
 
-namespace Rekrutacja.Controllers
+namespace VacationManagementSystem.Controllers
 {
     public class RekrutacjaController : Controller
     {

@@ -1,11 +1,11 @@
-﻿namespace Rekrutacja.Models
+﻿namespace VacationManagementSystem.Models
 {
     public class Team
     {
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
 
-        // 🔹 Relacja 1 -> *
+        //  Relacja 1 -> *
         public ICollection<Employee> Employees { get; set; } = new List<Employee>();
     }
 }

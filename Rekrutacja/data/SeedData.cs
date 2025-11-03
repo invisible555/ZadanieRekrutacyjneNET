@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Rekrutacja.Models;
+using VacationManagementSystem.Models;
 
-namespace Rekrutacja.Data
+namespace VacationManagementSystem.Data
 {
     public static class SeedData
     {

@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using System.Text.Json;
 
-namespace Rekrutacja.Middleware
+namespace VacationManagementSystem.Middleware
 {
     public class ErrorHandlingMiddleware
     {

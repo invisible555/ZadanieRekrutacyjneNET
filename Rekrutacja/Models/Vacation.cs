@@ -1,4 +1,6 @@
-﻿namespace Rekrutacja.Models
+﻿using VacationManagementSystem.Models;
+
+namespace VacationManagementSystem.Models
 {
     public class Vacation
     {

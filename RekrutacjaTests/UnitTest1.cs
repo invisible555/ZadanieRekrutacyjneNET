@@ -1,19 +1,22 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using NUnit.Framework.Legacy;
-using Rekrutacja.Models;
-using Rekrutacja.Services;
+using VacationManagementSystem.Models;
+using VacationManagementSystem.Repository;
+using VacationManagementSystem.Services;
 
-namespace Rekrutacja.Tests.Repository
+namespace VacationManagementSystem.Tests.Repository
 {
     [TestFixture]
     public class RekrutacjaServiceTests
     {
-        private RekrutacjaService _repo;
+        private RecrutationService _service;
 
         [SetUp]
         public void Setup()
         {
-            _repo = new RekrutacjaService();
+            var repoMock = new Mock<RecrutationRepository>();
+            _service = new RecrutationService(repoMock.Object);
         }
 
         [Test]

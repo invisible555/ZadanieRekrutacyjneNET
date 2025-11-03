@@ -1,4 +1,4 @@
-﻿namespace Rekrutacja.DTO
+﻿namespace VacationManagementSystem.DTO
 {
     public class EmployeeVacationViewModel
     {

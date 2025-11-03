@@ -1,4 +1,4 @@
-namespace Rekrutacja.Models
+namespace VacationManagementSystem.Models
 {
     public class ErrorViewModel
     {

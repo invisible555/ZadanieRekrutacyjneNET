@@ -1,4 +1,4 @@
-﻿namespace Rekrutacja.Models
+﻿namespace VacationManagementSystem.Models
 {
     public class Employee
     {
@@ -11,7 +11,7 @@
         public int VacationPackageId { get; set; }
         public VacationPackage? VacationPackage { get; set; }
 
-        // 🔹 Relacja 1 -> *
+        //  Relacja 1 -> *
         public ICollection<Vacation> Vacations { get; set; } = new List<Vacation>();
     }
 }
