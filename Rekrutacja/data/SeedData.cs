@@ -9,27 +9,32 @@ namespace VacationManagementSystem.Data
         {
             context.Database.EnsureCreated();
 
-            // 🔹 Jeśli dane już są — nie seedujemy ponownie
             if (context.Employees.Any())
                 return;
 
-            // 🔹 Zespoły
+         
             var team1 = new Team { Name = "Zespół IT" };
             var team2 = new Team { Name = "Zespół HR" };
+            var team3 = new Team { Name = "Zespół Finansowy" };
+            var team4 = new Team { Name = "Zespół Marketingu" };
 
-            // 🔹 Pakiety urlopowe
+           
             var package1 = new VacationPackage { Year = DateTime.Now.Year, GrantedDays = 26 };
             var package2 = new VacationPackage { Year = DateTime.Now.Year, GrantedDays = 20 };
 
-            // 🔹 Pracownicy
+         
             var jan = new Employee { Name = "Jan Kowalski", Team = team1, VacationPackage = package1 };
             var anna = new Employee { Name = "Anna Mariacka", Team = team1, VacationPackage = package1 };
             var kamil = new Employee { Name = "Kamil Nowak", Team = team2, VacationPackage = package2 };
+            var ewa = new Employee { Name = "Ewa Król", Team = team2, VacationPackage = package1 };
+            var piotr = new Employee { Name = "Piotr Zalewski", Team = team3, VacationPackage = package1 };
+            var ola = new Employee { Name = "Aleksandra Wójcik", Team = team3, VacationPackage = package2 };
+            var michal = new Employee { Name = "Michał Zieliński", Team = team4, VacationPackage = package2 };
+            var karolina = new Employee { Name = "Karolina Górska", Team = team4, VacationPackage = package1 };
 
-            // 🔹 Urlopy
             var vacations = new List<Vacation>
             {
-                // 🟢 Jan – 6 dni urlopu
+            
                 new Vacation
                 {
                     Employee = jan,
@@ -37,43 +42,86 @@ namespace VacationManagementSystem.Data
                     DateUntil = DateTime.Now.AddDays(-25)
                 },
 
-                // 🔴 Anna – 3 urlopy razem 26 dni (pełny limit)
+              
                 new Vacation
                 {
                     Employee = anna,
                     DateSince = DateTime.Now.AddDays(-60),
-                    DateUntil = DateTime.Now.AddDays(-50) // 11 dni (włącznie)
+                    DateUntil = DateTime.Now.AddDays(-50)
                 },
                 new Vacation
                 {
                     Employee = anna,
                     DateSince = DateTime.Now.AddDays(-40),
-                    DateUntil = DateTime.Now.AddDays(-35) // 6 dni
+                    DateUntil = DateTime.Now.AddDays(-35)
                 },
                 new Vacation
                 {
                     Employee = anna,
                     DateSince = DateTime.Now.AddDays(-20),
-                    DateUntil = DateTime.Now.AddDays(-12) // 9 dni
+                    DateUntil = DateTime.Now.AddDays(-12)
                 },
 
-                // 🟢 Kamil – 5 dni urlopu
+          
                 new Vacation
                 {
                     Employee = kamil,
                     DateSince = DateTime.Now.AddDays(-10),
                     DateUntil = DateTime.Now.AddDays(-6)
+                },
+
+              
+                new Vacation
+                {
+                    Employee = ewa,
+                    DateSince = DateTime.Now.AddDays(-45),
+                    DateUntil = DateTime.Now.AddDays(-39)
+                },
+                new Vacation
+                {
+                    Employee = ewa,
+                    DateSince = DateTime.Now.AddDays(-20),
+                    DateUntil = DateTime.Now.AddDays(-18)
+                },
+
+              
+                new Vacation
+                {
+                    Employee = piotr,
+                    DateSince = new DateTime(2019, 6, 10),
+                    DateUntil = new DateTime(2019, 6, 20)
+                },
+
+              
+                new Vacation
+                {
+                    Employee = michal,
+                    DateSince = DateTime.Now.AddDays(-7),
+                    DateUntil = DateTime.Now.AddDays(-5)
+                },
+
+            
+                new Vacation
+                {
+                    Employee = karolina,
+                    DateSince = DateTime.Now.AddDays(-90),
+                    DateUntil = DateTime.Now.AddDays(-85)
+                },
+                new Vacation
+                {
+                    Employee = karolina,
+                    DateSince = DateTime.Now.AddDays(-10),
+                    DateUntil = DateTime.Now.AddDays(-6)
                 }
             };
 
-            // 🔹 Zapis do bazy
-            context.Teams.AddRange(team1, team2);
+       
+            context.Teams.AddRange(team1, team2, team3, team4);
             context.VacationPackages.AddRange(package1, package2);
-            context.Employees.AddRange(jan, anna, kamil);
+            context.Employees.AddRange(jan, anna, kamil, ewa, piotr, ola, michal, karolina);
             context.Vacations.AddRange(vacations);
 
             context.SaveChanges();
         }
     }
 }
-

@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using VacationManagementSystem.Data;
 
 namespace VacationManagementSystem
 {
@@ -8,19 +9,20 @@ namespace VacationManagementSystem
     {
         public AppDbContext CreateDbContext(string[] args)
         {
-           
-            var projectPath = Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
-                "Rekrutacja"
-            );
+            // 📁 Pobierz aktualną ścieżkę projektu (tam, gdzie jest csproj)
+            var basePath = Directory.GetCurrentDirectory();
 
+            // 🔹 Spróbuj znaleźć appsettings.json w tej ścieżce
             var configuration = new ConfigurationBuilder()
-                .SetBasePath(projectPath)
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .SetBasePath(basePath)
+                .AddJsonFile("appsettings.json", optional: true)
                 .Build();
 
-            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            // 🔹 Pobierz connection string lub ustaw domyślny
+            var connectionString = configuration.GetConnectionString("DefaultConnection")
+                ?? "Server=(localdb)\\MSSQLLocalDB;Database=VacationManagement;Trusted_Connection=True;TrustServerCertificate=True;";
 
+            // 🔹 Skonfiguruj DbContext
             var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
             optionsBuilder.UseSqlServer(connectionString);
 
