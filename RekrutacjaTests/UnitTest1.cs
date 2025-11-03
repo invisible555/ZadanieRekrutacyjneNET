@@ -31,7 +31,7 @@ namespace VacationManagementSystem.Tests.Repository
             };
 
             // Act
-            var result = _repo.IfEmployeeCanRequestVacation(employee, vacations, vacationPackage);
+            var result = _service.IfEmployeeCanRequestVacation(employee, vacations, vacationPackage);
         
 
             // Assert
@@ -53,7 +53,7 @@ namespace VacationManagementSystem.Tests.Repository
             };
 
             // Act
-            var result = _repo.IfEmployeeCanRequestVacation(employee, vacations, vacationPackage);
+            var result = _service.IfEmployeeCanRequestVacation(employee, vacations, vacationPackage);
             
 
             // Assert

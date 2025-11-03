@@ -3,11 +3,11 @@ using VacationManagementSystem.Services;
 
 namespace VacationManagementSystem.Controllers
 {
-    public class RekrutacjaController : Controller
+    public class VacationManagmentController : Controller
     {
         private readonly VacationManagmentService _service;
 
-        public RekrutacjaController(VacationManagmentService service)
+        public VacationManagmentController(VacationManagmentService service)
         {
             _service = service;
         }

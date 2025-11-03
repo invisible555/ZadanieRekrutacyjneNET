@@ -14,9 +14,9 @@ namespace VacationManagementSystem.Repository
             _context = context;
         }
         //Zadanie 2 a
-        public List<Employee> GetWithAtleastOneVacation()
+        public List<Employee> GetWithAtleastOneVacation(int year)
         {
-            return _context.Employees.Where(e => e.Vacations.Any(x => x.DateSince.Year == 2019))
+            return _context.Employees.Where(e => e.Vacations.Any(x => x.DateSince.Year == year))
                 .ToList();
         }
         //Zadanie 2 b
@@ -35,9 +35,9 @@ namespace VacationManagementSystem.Repository
         }
 
         //Zadanie 2 c
-        public List<Team> GetTeamsWithNoVacationIn2019()
+        public List<Team> GetTeamsWithNoVacation(int year)
         {
-            var teams = _context.Teams.Where(t => t.Employees.All(e => e.Vacations.All(v => v.DateSince.Year != 2019 && v.DateUntil.Year != 2019)))
+            var teams = _context.Teams.Where(t => t.Employees.All(e => e.Vacations.All(v => v.DateSince.Year != year && v.DateUntil.Year != year)))
                 .ToList();
             return teams;
         }

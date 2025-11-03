@@ -31,6 +31,11 @@ dzięki czemu EF Core generuje zoptymalizowane zapytanie SQL.
 Użycie Include() dla powiązań – pozwala uniknąć problemu N+1 query,
 pobierając dane relacyjne (np. urlopy i pakiety urlopowe) w jednym zapytaniu.
 
+Tworzenie indeksów w bazie danych
+Dla często filtrowanych kolumn (np. EmployeeId, DateSince, TeamId) warto utworzyć indeksy.
+Indeks przyspiesza wyszukiwanie i sortowanie danych, zwłaszcza przy dużych tabelach. Jednak nie
+może być zbyt wiele indeksów, aby nie spowalniać operacji zapisu.
+
 🧪 Testy jednostkowe
 
 Projekt zawiera testy NUnit, które weryfikują metodę:
