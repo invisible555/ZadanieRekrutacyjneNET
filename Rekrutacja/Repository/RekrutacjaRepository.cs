@@ -2,6 +2,7 @@
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System.Net;
 using Microsoft.EntityFrameworkCore;
+using Rekrutacja.DTO;
 
 namespace Rekrutacja.Repository
 {
@@ -56,9 +57,5 @@ namespace Rekrutacja.Repository
                 .FirstOrDefault(e => e.Id == id);
         }
     }
-    public class EmployeeVacationDaysDTO
-    {
-        public Employee Employee { get; set; } = new Employee();
-        public int UsedVacationDays { get; set; }
-    }
+    
 }
