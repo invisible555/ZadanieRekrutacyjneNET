@@ -1,0 +1,99 @@
+##############################
+# Build results / artifacts
+##############################
+bin/
+obj/
+out/
+TestResults/
+publish/
+dist/
+logs/
+
+##############################
+# Visual Studio files
+##############################
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.ncb
+*.aps
+*.dbmdl
+*.opendb
+*.VC.db
+
+##############################
+# Entity Framework
+##############################
+Migrations/
+*.db
+*.sqlite
+*.mdf
+*.ldf
+
+##############################
+# Configuration / secrets
+##############################
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+.env
+.env.*
+
+##############################
+# OS and Editor junk files
+##############################
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+##############################
+# Rider / JetBrains
+##############################
+.idea/
+*.sln.iml
+
+##############################
+# Backup / temp / logs
+##############################
+*.bak
+*.tmp
+*.temp
+*.log
+*.old
+
+##############################
+# NuGet
+##############################
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+##############################
+# Coverage / Test Tools
+##############################
+*.coverage
+*.coveragexml
+*.trx
+*.nunit.xml
+*.VisualState.xml
+.coverage/
+.coveragehistory/
+
+##############################
+# Publish / Build outputs
+##############################
+wwwroot/dist/
+wwwroot/lib/
+node_modules/
+bundle/
+
+##############################
+# Others
+##############################
+_ReSharper*/
+*.resharper
+*.DotSettings.user
