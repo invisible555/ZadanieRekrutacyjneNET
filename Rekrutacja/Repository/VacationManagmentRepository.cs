@@ -6,10 +6,10 @@ using VacationManagementSystem.DTO;
 
 namespace VacationManagementSystem.Repository
 {
-    public class RekrutacjaRepository
+    public class VacationManagmentRepository
     {
         private readonly AppDbContext _context;
-        public RekrutacjaRepository(AppDbContext context)
+        public VacationManagmentRepository(AppDbContext context)
         {
             _context = context;
         }

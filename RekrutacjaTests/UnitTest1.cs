@@ -10,13 +10,13 @@ namespace VacationManagementSystem.Tests.Repository
     [TestFixture]
     public class RekrutacjaServiceTests
     {
-        private RecrutationService _service;
+        private VacationManagmentService _service;
 
         [SetUp]
         public void Setup()
         {
-            var repoMock = new Mock<RecrutationRepository>();
-            _service = new RecrutationService(repoMock.Object);
+            var repoMock = new Mock<VacationManagmentRepository>();
+            _service = new VacationManagmentService(repoMock.Object);
         }
 
         [Test]

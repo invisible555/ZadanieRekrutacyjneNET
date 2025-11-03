@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rekrutacja", "Rekrutacja.csproj", "{AEF7B009-E346-4EB2-8A33-6D5E7AD97127}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationManagementSystem", "VacationManagementSystem.csproj", "{AEF7B009-E346-4EB2-8A33-6D5E7AD97127}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RekrutacjaTests", "..\RekrutacjaTests\RekrutacjaTests.csproj", "{91ED055E-122A-4817-9E93-0390F971B562}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationManagementSystemTests", "..\RekrutacjaTests\VacationManagementSystemTests.csproj", "{91ED055E-122A-4817-9E93-0390F971B562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETRekrutacja", "..\Zadanie1\NETRekrutacja.csproj", "{A190086B-AAAD-8F7A-2DCF-57274A677D87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeHierarchy", "..\Zadanie1\EmployeeHierarchy.csproj", "{A190086B-AAAD-8F7A-2DCF-57274A677D87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

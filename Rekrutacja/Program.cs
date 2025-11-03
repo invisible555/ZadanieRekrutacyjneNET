@@ -16,8 +16,8 @@ namespace VacationManagementSystem
        
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddScoped<RekrutacjaRepository>();
-            builder.Services.AddScoped<RekrutacjaService>();
+            builder.Services.AddScoped<VacationManagmentRepository>();
+            builder.Services.AddScoped<VacationManagmentService>();
             var app = builder.Build();
             
             // Configure the HTTP request pipeline.

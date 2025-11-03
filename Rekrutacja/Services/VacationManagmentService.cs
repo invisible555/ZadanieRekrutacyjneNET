@@ -5,11 +5,11 @@ using VacationManagementSystem.Repository;
 
 namespace VacationManagementSystem.Services
 {
-    public class RecrutationService
+    public class VacationManagmentService
     {
 
-        private readonly RecrutationRepository _repository;
-        public RecrutationService(RecrutationRepository repository)
+        private readonly VacationManagmentRepository _repository;
+        public VacationManagmentService(VacationManagmentRepository repository)
         {
             _repository = repository;
 

@@ -5,9 +5,9 @@ namespace VacationManagementSystem.Controllers
 {
     public class RekrutacjaController : Controller
     {
-        private readonly RekrutacjaService _service;
+        private readonly VacationManagmentService _service;
 
-        public RekrutacjaController(RekrutacjaService service)
+        public RekrutacjaController(VacationManagmentService service)
         {
             _service = service;
         }
