@@ -36,6 +36,28 @@ pobierając dane relacyjne (np. urlopy i pakiety urlopowe) w jednym zapytaniu.
 Projekt zawiera testy NUnit, które weryfikują metodę:
 -IfEmployeeCanRequestVacation
 
+zapewnia powtarzalność wyników — aplikacja zawsze startuje z tym samym zestawem danych.
+
+Projekt korzysta z Entity Framework Core z SQL Server (LocalDB) w podejściu Code First.
+Dzięki temu baza danych generowana jest automatycznie na podstawie modeli i relacji w kodzie.
+
+🔹 Uruchomienie bazy danych:
+
+Upewnij się, że masz zainstalowany SQL Server Express lub LocalDB (domyślnie instalowany z Visual Studio).
+
+W pliku appsettings.json znajduje się konfiguracja połączenia:
+
+"ConnectionStrings": {
+  "DefaultConnection": "Server=(localdb)\\MSSQLLocalDB;Database=RekrutacjaDb;Trusted_Connection=True;TrustServerCertificate=True;"
+}
+
+
+Wykonaj migracje i utwórz bazę danych:
+
+dotnet ef migrations add Init
+dotnet ef database update
+
+
 
 🚀 Jak uruchomić projekt lokalnie
 1️⃣ Sklonuj repozytorium
