@@ -1,7 +1,7 @@
 🧩 Zadanie rekrutacyjne – ASP.NET Core MVC (.NET 9)
 📘 Opis projektu
 
-Zadania zostały wykonane w architekturze ASP.NET Core MVC (.NET 9) z wykorzystaniem Entity Framework Core (InMemory).
+Zadania zostały wykonane w architekturze ASP.NET Core MVC (.NET 9) z wykorzystaniem Entity Framework Core.
 Projekt został podzielony na warstwy, aby zachować przejrzystość, testowalność i łatwość utrzymania.
 
 🔹 Architektura
