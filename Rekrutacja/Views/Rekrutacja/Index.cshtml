@@ -1,0 +1,44 @@
+﻿@model List<Rekrutacja.DTO.EmployeeVacationViewModel>
+
+@{
+    ViewData["Title"] = "Lista pracowników";
+}
+
+<h2>Lista pracowników i ich urlopy</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Imię i nazwisko</th>
+            <th>Przyznane dni</th>
+            <th>Wykorzystane dni</th>
+            <th>Pozostałe dni</th>
+            <th>Może złożyć wniosek</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in Model)
+        {
+            <tr>
+                <td>@e.Name</td>
+                <td>@e.GrantedDays</td>
+                <td>@e.UsedDays</td>
+                <td>@e.FreeDays</td>
+                <td>
+                    @if (e.CanRequestVacation)
+                    {
+                        <span class="text-success">✅ Tak</span>
+                    }
+                    else
+                    {
+                        <span class="text-danger">❌ Nie</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@e.EmployeeId" class="btn btn-primary btn-sm">Szczegóły</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

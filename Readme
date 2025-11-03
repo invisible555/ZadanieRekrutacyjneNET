@@ -1,0 +1,21 @@
+Zadanie 6
+1.Zamiast pobierać całe encje z bazy, można pobrać tylko potrzebne kolumny za pomocą Select().
+Dzięki temu aplikacja przetwarza mniej danych i zapytanie SQL jest prostsze i szybsze.
+2.Zamiast pobierać wszystkie dane i filtrować je w C#, warto filtrować już na poziomie SQL.
+EF Core wygeneruje zoptymalizowane zapytanie i pobierze tylko te rekordy, które spełniają warunek.
+3.Jeśli potrzebne są dane powiązane, np. urlopy i pakiety urlopowe, można pobrać wszystko jednym zapytaniem.
+Dzięki temu unika się problemu N+1 zapytań i poprawia wydajność przy pracy z relacjami.
+
+
+Zadania zostały wykonane w architekturze ASP.NET Core MVC (.NET 9) z wykorzystaniem Entity Framework Core.
+Zastosowałem podejście warstwowe, dzieląc logikę na czytelne i łatwe w utrzymaniu moduły:
+
+Models – definicje encji (Employee, Team, Vacation, VacationPackage) oraz relacji między nimi zgodnie ze schematem z zadania.
+
+Repository – odpowiedzialne za logikę zapytań i komunikację z kontekstem danych (AppDbContext).
+
+Services – zawiera logikę biznesową, m.in. obliczanie wykorzystanych dni urlopu (CountFreeDaysForEmployee) oraz weryfikację możliwości złożenia wniosku urlopowego (IfEmployeeCanRequestVacation).
+
+Controllers – warstwa prezentacji, w której dane z serwisu są udostępniane do widoku.
+
+Middleware – globalna obsługa błędów i wyjątków w aplikacji (ErrorHandlingMiddleware), zwracająca spójne komunikaty HTTP.

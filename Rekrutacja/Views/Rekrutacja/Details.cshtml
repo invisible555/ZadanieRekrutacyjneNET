@@ -1,0 +1,58 @@
+﻿@model Rekrutacja.DTO.EmployeeDetailsViewModel
+
+@{
+    ViewData["Title"] = "Szczegóły pracownika";
+}
+
+<h2>Szczegóły pracownika – @Model.Name</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Przyznane dni</th>
+        <td>@Model.GrantedDays</td>
+    </tr>
+    <tr>
+        <th>Wykorzystane dni</th>
+        <td>@Model.UsedDays</td>
+    </tr>
+    <tr>
+        <th>Pozostałe dni</th>
+        <td>@Model.FreeDays</td>
+    </tr>
+    <tr>
+        <th>Może złożyć wniosek</th>
+        <td>
+            @if (Model.CanRequestVacation)
+            {
+                <span class="text-success">✅ Tak</span>
+            }
+            else
+            {
+                <span class="text-danger">❌ Nie</span>
+            }
+        </td>
+    </tr>
+</table>
+
+<h4>Historia urlopów:</h4>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Od</th>
+            <th>Do</th>
+            <th>Liczba dni</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var v in Model.Vacations)
+        {
+            <tr>
+                <td>@v.DateSince.ToShortDateString()</td>
+                <td>@v.DateUntil.ToShortDateString()</td>
+                <td>@v.Duration</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">⬅ Powrót</a>
