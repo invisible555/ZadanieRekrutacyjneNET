@@ -39,9 +39,9 @@ VacationPackage vacationPackage)
 
 
         // Dane do widoku Index
-        public List<EmployeeVacationViewModel> GetEmployeesVacationSummary()
+        public async Task<List<EmployeeVacationViewModel>> GetEmployeesVacationSummaryAsync()
         {
-            var employees = _repository.GetAllEmployeesWithVacations();
+            var employees = await _repository.GetAllEmployeesWithVacationsAsync();
 
             return employees.Select(e => new EmployeeVacationViewModel
             {
@@ -56,10 +56,10 @@ VacationPackage vacationPackage)
             }).ToList();
         }
 
-        // Dane do widoku Details
-        public EmployeeDetailsViewModel? GetEmployeeDetails(int id)
+        //  Dane do widoku Details (asynchronicznie)
+        public async Task<EmployeeDetailsViewModel?> GetEmployeeDetailsAsync(int id)
         {
-            var employee = _repository.GetEmployeeById(id);
+            var employee = await _repository.GetEmployeeByIdAsync(id);
             if (employee == null)
                 return null;
 
@@ -85,12 +85,4 @@ VacationPackage vacationPackage)
             };
         }
     }
-
-  
-
-   
-
-
-
-
 }

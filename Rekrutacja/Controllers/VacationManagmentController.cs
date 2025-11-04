@@ -12,19 +12,19 @@ namespace VacationManagementSystem.Controllers
             _service = service;
         }
 
-        // Widok listy pracowników i statusów urlopowych
+        //  Widok listy pracowników i statusów urlopowych
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var employees = _service.GetEmployeesVacationSummary();
+            var employees = await _service.GetEmployeesVacationSummaryAsync();
             return View(employees);
         }
 
-        // Widok szczegółowy jednego pracownika
+        //  Widok szczegółowy jednego pracownika
         [HttpGet]
-        public IActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
-            var employee = _service.GetEmployeeDetails(id);
+            var employee = await _service.GetEmployeeDetailsAsync(id);
             if (employee == null)
                 return NotFound($"Nie znaleziono pracownika o ID {id}.");
 
